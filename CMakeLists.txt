@@ -429,10 +429,10 @@ endif()
 
 # Add linker wrap flags for esp_log functions when CONFIG_DIAG_USE_EXTERNAL_LOG_WRAP is not enabled
 # This provides wrapper functions required by WiFi library even when esp_diagnostics is not active
-if(NOT CONFIG_DIAG_USE_EXTERNAL_LOG_WRAP)
-    target_link_libraries(${COMPONENT_LIB} INTERFACE "-Wl,--wrap=esp_log_write")
-    target_link_libraries(${COMPONENT_LIB} INTERFACE "-Wl,--wrap=esp_log_writev")
-endif()
+# if(NOT CONFIG_DIAG_USE_EXTERNAL_LOG_WRAP)
+#    target_link_libraries(${COMPONENT_LIB} INTERFACE "-Wl,--wrap=esp_log_write")
+#    target_link_libraries(${COMPONENT_LIB} INTERFACE "-Wl,--wrap=esp_log_writev")
+# endif()
 
 # This function adds a dependency on the given component if the component is included into the build.
 function(maybe_add_component component_name)
